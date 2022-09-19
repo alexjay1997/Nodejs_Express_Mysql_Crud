@@ -26,9 +26,11 @@ mysqlConnection.connect((err)=>{
 }) ;  
 
 app.listen(3000,() =>console.log( ' Express server is runnig at port no : 3000 ' ) ) ;
+
+//get all data
 app.get('/tests' ,( req ,res )=> {
    mysqlConnection.query( ' SELECT * FROM test ' ,( err , rows , fields ) => {
-
+    res.header('Access-Control-Allow-Origin', '*');
     if(!err)
     res.send(rows);
     //console.log(rows);
@@ -36,3 +38,14 @@ app.get('/tests' ,( req ,res )=> {
     console.log(err);
    })
 }); 
+// select data by id
+app.get('/tests/:id' ,( req ,res )=> {
+    mysqlConnection.query( ' SELECT * FROM test WHERE id = ?',[req.params.id] ,( err , rows , fields ) => {
+     res.header('Access-Control-Allow-Origin', '*');
+     if(!err)
+     res.send(rows);
+     //console.log(rows);
+     else
+     console.log(err);
+    })
+ }); 
