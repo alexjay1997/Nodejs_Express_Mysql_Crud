@@ -55,10 +55,10 @@ data.forEach((datas)=>{
    // img.src = company.Images;
     outputdata += `
 <tr>
-<td>${datas.id}</td>
-<td>${datas.name}</td>
-<td>${datas.age}</td>
-<td>${datas.address}</td>
+<td class="px-5 py-3 border border-slate-700">${datas.id}</td>
+<td class="px-5 py-3 border border-slate-700">${datas.name}</td>
+<td class="px-5 py-3 border border-slate-700">${datas.age}</td>
+<td class="px-5 py-3 border border-slate-700">${datas.address}</td>
 </tr>                 
     `;                     
 //document.getElementById("data").append(img);

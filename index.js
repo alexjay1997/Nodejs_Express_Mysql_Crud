@@ -76,6 +76,21 @@ app.delete('/tests/:id' ,( req ,res )=> {
      console.log(err);
     })
  });
+//update data by id
+app.put('/tests/:id',( req ,res )=> {
+    const name = req.body.name;
+    const address = req.body.address;
+    const age = req.body.age;
+    mysqlConnection.query("UPDATE test SET name=?, address=?,age=? WHERE id=?",[name,address,age,req.params.id],(err,rows)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+     if(!err){
+        res.send('Update Sucessfully!');
+    }
+     else{
+     console.log(err);
+     }
+    })
+ }); 
 
 
  router.get('/',function(req,res){
@@ -84,3 +99,24 @@ app.delete('/tests/:id' ,( req ,res )=> {
   });
   app.use('/', router);
   
+
+
+
+
+
+
+
+
+   // update data by id
+//  app.put('/tests/:id' ,( req ,res )=> {
+//     const name = req.body.name;
+//     const address = req.body.address;
+//     const age = req.body.age;
+//     mysqlConnection.query( ' Update test SET name =? ,address=? ,age=? WHERE id = ?',[name,address,age,req.params.id] ,( err , rows , fields ) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//      if(!err)
+//      res.send("Update Successfully!");
+//      else
+//      console.log(err);
+//     })
+//  });
