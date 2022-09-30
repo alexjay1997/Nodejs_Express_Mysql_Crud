@@ -76,6 +76,16 @@ app.delete('/tests/:id' ,( req ,res )=> {
      console.log(err);
     })
  });
+ // delete data by id for front end
+app.get('/delete_tests/:id' ,( req ,res )=> {
+    mysqlConnection.query( ' DELETE FROM test WHERE id = ?',[req.params.id] ,( err , rows , fields ) => {
+    res.header('Access-Control-Allow-Origin', '*');
+     if(!err)
+     res.send("Deleted Successfully!");
+     else
+     console.log(err);
+    })
+ });
 //update data by id
 app.put('/tests/:id',( req ,res )=> {
     const name = req.body.name;

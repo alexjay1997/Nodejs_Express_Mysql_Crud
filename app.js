@@ -1,3 +1,39 @@
+//using fetch API 
+fetch("http://localhost:3000/tests")
+            .then(res => res.json())
+            .then(data => {
+             console.log(data);
+             var outputdata="";
+                    
+     //loop start
+data.forEach((datas)=>{
+    var img = new Image();
+  
+    outputdata += `
+<tr>
+<td class="px-5 py-3 border border-slate-700">${datas.id}</td>
+<td class="px-5 py-3 border border-slate-700">${datas.name}</td>
+<td class="px-5 py-3 border border-slate-700">${datas.age}</td>
+<td class="px-5 py-3 border border-slate-700">${datas.address}</td>
+<td class="px-5 py-3 border border-slate-700"><a href='http://localhost:3000/delete_tests/${datas.id}'>Delete</a></td>
+</tr>                 
+    `;                     
+
+})
+document.getElementById("data").innerHTML= outputdata;//append data to html file
+})
+
+
+
+
+
+
+
+
+
+
+
+
 // const api_url = 
 //       "http://localhost:3000/tests";
   
@@ -43,27 +79,3 @@
 // }
 
 
-fetch("http://localhost:3000/tests")
-            .then(res => res.json())
-            .then(data => {
-             console.log(data);
-             var outputdata="";
-                    
-     //loop start
-data.forEach((datas)=>{
-    var img = new Image();
-   // img.src = company.Images;
-    outputdata += `
-<tr>
-<td class="px-5 py-3 border border-slate-700">${datas.id}</td>
-<td class="px-5 py-3 border border-slate-700">${datas.name}</td>
-<td class="px-5 py-3 border border-slate-700">${datas.age}</td>
-<td class="px-5 py-3 border border-slate-700">${datas.address}</td>
-</tr>                 
-    `;                     
-//document.getElementById("data").append(img);
-
-})
-
-document.getElementById("data").innerHTML= outputdata;
-})
