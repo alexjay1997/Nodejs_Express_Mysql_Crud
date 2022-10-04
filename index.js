@@ -12,9 +12,9 @@ app.use(cors()) //enable cors requests
 app.use(bodyparser.json());
 
 app.use(basicAuth({
-    users: { 'admin':'test' },
+    users: { 'admin':'test' },  //or  Basic YWRtaW46dGVzdA==
     challenge: true,// login first 
-    realm: 'foo',
+    ////realm: 'foo',
     unauthorizedResponse: getUnauthorizedResponse
 }))
 function getUnauthorizedResponse(req) {
@@ -44,7 +44,7 @@ app.listen(3000,() =>console.log( ' Express server is runnig at port no : 3000 '
 //get all data
 app.get('/tests' ,( req ,res )=> {
    mysqlConnection.query( ' SELECT * FROM test ' ,( err , rows , fields ) => {
-    res.header('Access-Control-Allow-Origin', '*');
+    //res.header('Access-Control-Allow-Origin', '*');
     if(!err)
     res.send(rows);
     //console.log(rows);

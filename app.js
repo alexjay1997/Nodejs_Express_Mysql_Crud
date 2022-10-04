@@ -22,7 +22,7 @@ data.forEach((datas)=>{
 <td class="px-5 py-3 border border-slate-700">${datas.name}</td>
 <td class="px-5 py-3 border border-slate-700">${datas.age}</td>
 <td class="px-5 py-3 border border-slate-700">${datas.address}</td>
-<td class="px-5 py-3 border border-slate-700"><a href='http://localhost:3000/delete_tests/${datas.id}'>Delete</a></td>
+<td class="px-5 py-3 border border-slate-700"><a href='http://localhost:3000/delete_tests/${datas.id}' style="background:#ea4949;padding:10px;color:white;border-radius:50px;font-size:12px;width:400px;">Remove</a></td>
 </tr>                 
     `;                     
 
