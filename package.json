@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   
-   "start": "nodemon index.js",
-   "build-tail":"SET NODE_ENV=production tailwindcss build -i styles/tailwindcss.css -o assets/styles.css"
+    "start": "nodemon index.js",
+    "build-tail": "SET NODE_ENV=production tailwindcss build -i styles/tailwindcss.css -o assets/styles.css"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +13,7 @@
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "express-basic-auth": "^1.2.1",
     "fetch": "^1.1.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20"

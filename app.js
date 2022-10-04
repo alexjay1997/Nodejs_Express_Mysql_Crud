@@ -1,9 +1,16 @@
 //using fetch API 
-fetch("http://localhost:3000/tests")
-            .then(res => res.json())
-            .then(data => {
-             console.log(data);
-             var outputdata="";
+fetch("http://localhost:3000/tests",
+{
+    headers: {
+        'Authorization': 'Basic YWRtaW46dGVzdA==',//Basic auth for api base 64 encoded
+        'Accept': 'application/json',
+         //'Content-Type': 'multipart/form-data'
+    }
+})
+    .then(res => res.json())
+    .then(data => {
+    console.log(data);
+var outputdata="";
                     
      //loop start
 data.forEach((datas)=>{

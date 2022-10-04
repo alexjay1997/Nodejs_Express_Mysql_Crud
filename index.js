@@ -3,6 +3,7 @@ const express =  require('express');
 const cors = require('cors') //you need to `npm install cors` first
 const path = require('path');
 const router = express.Router();
+const basicAuth = require('express-basic-auth');
 
 var app = express();
 const bodyparser = require('body-parser');
@@ -10,6 +11,17 @@ const bodyparser = require('body-parser');
 app.use(cors()) //enable cors requests
 app.use(bodyparser.json());
 
+app.use(basicAuth({
+    users: { 'admin':'test' },
+    challenge: true,// login first 
+    realm: 'foo',
+    unauthorizedResponse: getUnauthorizedResponse
+}))
+function getUnauthorizedResponse(req) {
+    return req.auth
+        ? ('UnAuthorized!')
+        : 'No credentials provided'
+}
 var mysqlConnection = mysql.createConnection(
     {
         host:'localhost',
@@ -70,6 +82,7 @@ app.get('/tests/:id' ,( req ,res )=> {
 app.delete('/tests/:id' ,( req ,res )=> {
     mysqlConnection.query( ' DELETE FROM test WHERE id = ?',[req.params.id] ,( err , rows , fields ) => {
     res.header('Access-Control-Allow-Origin', '*');
+   
      if(!err)
      res.send("Deleted Successfully!");
      else
@@ -79,7 +92,8 @@ app.delete('/tests/:id' ,( req ,res )=> {
  // delete data by id for front end
 app.get('/delete_tests/:id' ,( req ,res )=> {
     mysqlConnection.query( ' DELETE FROM test WHERE id = ?',[req.params.id] ,( err , rows , fields ) => {
-    res.header('Access-Control-Allow-Origin', '*');
+    //res.header('Access-Control-Allow-Origin', '*');
+
      if(!err)
      res.send("Deleted Successfully!");
      else
