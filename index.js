@@ -115,32 +115,24 @@ app.put('/tests/:id',( req ,res )=> {
      }
     })
  }); 
+ //add ejs templating for front end
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','ejs');
 
+//render data to html template
+router.get('/',function(req,res){
+    mysqlConnection.query( ' SELECT * FROM test ' ,( err , rows , fields ) => {
+        if(!err){
+        res.render('index',{
+            datas:rows
+        })
+        }
+        else{
+            res.send('Error Sorry! you cant access this page!');
 
- router.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/views'+'/index.html'));
+        }
+    });
 
-  });
+});
+
   app.use('/', router);
-  
-
-
-
-
-
-
-
-
-   // update data by id
-//  app.put('/tests/:id' ,( req ,res )=> {
-//     const name = req.body.name;
-//     const address = req.body.address;
-//     const age = req.body.age;
-//     mysqlConnection.query( ' Update test SET name =? ,address=? ,age=? WHERE id = ?',[name,address,age,req.params.id] ,( err , rows , fields ) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//      if(!err)
-//      res.send("Update Successfully!");
-//      else
-//      console.log(err);
-//     })
-//  });
