@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Node JS Crud Front end </title>
+</head>
+<body>
+  <div class="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
+    <div class="overflow-x-auto sm:-mx-3 lg:-mx-3">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Edit user_data data</h1>
+          <div class="w-full max-w-xs">
+            <% datas.forEach(function(user_data){ %>
+            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+               
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                  User ID
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" value="<%= user_data.id %>" disabled>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                  User Name
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" value="<%= user_data.name %>">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                  Age
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" value="<%= user_data.age %>">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                  Address
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" value="<%= user_data.address %>">
+              </div>
+           
+             
+              <div class="flex items-center justify-between">
+                <button class="bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                  Update
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/">
+                  Cancel
+                </a>
+              </div>
+              <% }); %>
+            </form>
+          
+          </div>
+               
+               
+         
+           
+                  
+           
+
+        </div>
+      </div>
+    </div>
+  </div>
+   
+</body>
+<script src =''>
+</script>
+</html>

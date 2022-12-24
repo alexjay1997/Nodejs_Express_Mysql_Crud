@@ -27,7 +27,8 @@ data.forEach((datas)=>{
 `;                     
 
 })
-document.getElementById("data").innerHTML= outputdata;//append data to html file
+const userdata  =document.getElementById("data")as HTMLElement;//append data to html file
+userdata.innerHTML= outputdata ;
 })
 
 

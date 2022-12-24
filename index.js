@@ -135,4 +135,21 @@ router.get('/',function(req,res){
 
 });
 
+//edit page
+router.get('/edit/:id',function(req,res){
+    mysqlConnection.query( ' SELECT * FROM test  where id =?' ,[req.params.id] ,( err , rows , fields ) => {
+        if(!err){
+        res.render('edit',{
+            datas:rows
+        })
+        }
+        else{
+            res.send('Error Sorry! you cant access this page!');
+
+        }
+    });
+
+});
+
+
   app.use('/', router);
