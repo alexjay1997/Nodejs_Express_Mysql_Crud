@@ -14,42 +14,37 @@
     <div class="overflow-x-auto sm:-mx-3 lg:-mx-3">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Edit user_data data</h1>
+          <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Add New User</h1>
           <div class="w-full max-w-xs">
             
-            <form method="post" action="/update" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
-                <% datas.forEach(function(user_data){ %>
-              <div class="mb-4">
-                <!-- <label class="block text-gray-700 text-sm font-bold mb-2" for="User ID" hidden>
-                  User ID
-                </label> -->
-                <input name="id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="userid" type="number" placeholder="ID" value="<%= user_data.id %>" hidden >
-              </div>
+            <form method="post" action="/add_new" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
+                
+           
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
                   User Name
                 </label>
-                <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" value="<%= user_data.name %>">
+                <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" value="">
               </div>
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="age">
                   Age
                 </label>
-                <input name="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="number" placeholder="Age" value="<%= user_data.age %>">
+                <input name="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="number" placeholder="Age" value="">
               </div>
               <div class="mb-4"> 
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
                   Address
                 </label>
-                <input name="address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" placeholder="address" value="<%= user_data.address %>">
+                <input name="address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" type="text" placeholder="address" value="">
               </div>
-                <input type="submit"  value="Update">
+                <input type="submit"  value="Submit">
 
                 <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/">
                   Cancel
                 </a>
              
-              <% }); %>
+            
             </form>
           
           </div>

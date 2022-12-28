@@ -14,7 +14,8 @@
     <div class="overflow-x-auto sm:-mx-3 lg:-mx-3">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Display Data From API</h1>
+          <h1 class="sm:text-3xl text-3xl font-medium title-font mb-2 text-gray-900">Node JS Ejs Express Mysql</h1>
+          <h3 class="sm:text-2xl text-2xl font-medium title-font mb-2 text-gray-900">Display Data From API</h3>
           <table class="table-auto hover:border-spacing-2 min-w-full">
             <thead class="border-b bg-green-500  px-5 py-3 text-gray-100">
               <tr>
@@ -36,6 +37,8 @@
               </tr>
             </thead>
             <tbody id="data">
+              <a href='http://localhost:3000/add/' style="float:right;background:#4cb15d;padding:10px;color:white;border-radius:50px;font-size:12px;width:110px;">+ Add new user</a>
+              <br><br>
               <tr class="border-b">
                
                 <% datas.forEach(function(user_data){ %>
@@ -44,7 +47,7 @@
                     <td class="px-5 py-3 border border-slate-700"><%= user_data.name %></td>
                     <td class="px-5 py-3 border border-slate-700"><%= user_data.age %></td>
                     <td class="px-5 py-3 border border-slate-700"><%= user_data.address %></td>
-                    <td class="px-5 py-3 border border-slate-700"><a href='http://localhost:3000/edit/<%= user_data.id %>' style="background:#4bbd5e;padding:10px;color:white;border-radius:50px;font-size:12px;width:400px;">Edit</a>&nbsp;<a href='http://localhost:3000/delete_tests/<%= user_data.id %>' style="background:#ea4949;padding:10px;color:white;border-radius:50px;font-size:12px;width:400px;">Remove</a></td>
+                    <td class="px-5 py-3 border border-slate-700"><a href='http://localhost:3000/edit/<%= user_data.id %>' style="background:#f3c063;padding:10px;color:white;border-radius:50px;font-size:12px;width:400px;">Edit</a>&nbsp;<a href='http://localhost:3000/delete_tests/<%= user_data.id %>' style="background:#ea4949;padding:10px;color:white;border-radius:50px;font-size:12px;width:400px;">Remove</a></td>
                     </tr> 
                     <% }); %>
               </tr>
